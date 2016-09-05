@@ -1,0 +1,108 @@
+
+<html>
+   <head>
+      <title>Bootstrap 模板：填写表单</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <meta charset='UTF-8'>
+      <!-- 引入 Bootstrap -->
+      <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+
+      <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+      <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+      <!--[if lt IE 9]>
+         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+      <![endif]-->
+   </head>
+   <body>
+		
+			<div class="container">
+				<div class="row clearfix">
+					<div class="col-md-12 column">
+						<h3>
+							欢迎来到CAC，请填写你的基本信息哦~
+						</h3>
+					</div>
+				</div>
+				<div class="row clearfix">
+					<div class="col-md-12 column">
+						<form role="form" action="/forms" method="post">							
+							<div class="form-group">
+								 <label for="realName">真实姓名<span style="color:red">*</span></label><input type="text" class="form-control" name="realName" id="realName" required />
+							</div>
+							<div class="form-group">
+								 <label for="phone">手机<span style="color:red">*</span></label><input type="text" class="form-control" name="phone" id="phone" 
+										pattern="[0-9]{11}" title="11位手机号" required />
+							</div>
+							<div class="form-group">
+								 <label for="academy">院系<span style="color:red">*</span></label><input type="text" class="form-control" name="academy" id="academy" 
+										 title="请输入完整的学院名~" required />
+							</div>
+							<div class="form-group">
+								 <label for="grade">入学时间<span style="color:red">*</span></label>
+							</div>
+							<div class="form-group">
+								<label>
+									<input type="radio" name="grade" id="optionsRadios1" 
+										value="option1" checked> 2016
+								</label>
+								<label>
+									<input type="radio" name="grade" id="optionsRadios2" 
+										value="option2"> 2015
+								</label>
+								<label>
+									<input type="radio" name="grade" id="optionsRadios2" 
+										value="option2"> 2014或更早
+								</label>
+							</div>
+							<div class="form-group">
+								 <label for="cn">CN(CAC Name)</label><input type="text" class="form-control" name="cn" id="cn" title="太长的名字叫起来会麻烦的！暂时没想好也不要紧！"/>
+							</div>
+							<div class="form-group">
+								 <label for="department">意愿部门<span style="color:red">*</span></label>
+							</div>
+							<div class="checkbox">
+								 <label><input type="checkbox" name="department" value="1">cos团(包括道具，化妆和配音)</label>
+							</div>
+							<div class="checkbox">
+								 <label><input type="checkbox" name="department" value="2">宅舞团</label>
+							</div>
+							<div class="checkbox">
+								 <label><input type="checkbox" name="department" value="4">宣传组</label>
+							</div>
+							<div class="checkbox">
+								 <label><input type="checkbox" name="department" value="8">音乐部</label>
+							</div>
+							<div class="checkbox">
+								 <label><input type="checkbox" name="department" value="16">技术部</label>
+							</div>
+							<div class="checkbox">
+								 <label><input type="checkbox" name="department" value="32">活动部</label>
+							</div>
+							<div class="checkbox">
+								 <label><input type="checkbox" name="department" value="64">摄影部</label>
+							</div>							
+							
+							<div class="form-group">
+								 <label for="last"><span style="color:red">*</span></label>
+							</div>
+							<!--div class="form-group">
+								 <label for="exampleInputFile">File input</label><input type="file" id="exampleInputFile" />
+								<p class="help-block">
+									Example block-level help text here.
+								</p>
+							</div -->
+							
+							<div class="checkbox">
+								 <label><input type="checkbox" />我认真听取了方四爷的教诲</label>
+							</div> <button type="submit" class="btn btn-default">加入CAC！</button>
+						</form>
+					</div>
+				</div>
+			</div>
+      <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+      <script src="https://code.jquery.com/jquery.js"></script>
+      <!-- 包括所有已编译的插件 -->
+      <script src="js/bootstrap.min.js"></script>
+   </body>
+</html>
