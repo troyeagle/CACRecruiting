@@ -28,34 +28,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.get('/', function(req, res) {
-
-	var signature = req.query.signature
-	var timestamp = req.query.timestamp
-	var nonce = req.query.nonce
-	var token = "cac"
-	console.log(signature+" "+timestamp+" " +nonce);
-	if(signature===undefined||timestamp===undefined||nonce===undefined){
-		res.render('index', { currentTime: new Date() });
-	}
-	var array = new Array(token,timestamp,nonce)
-	array.sort()
-
-	var sha1 = crypto.createHash('sha1')
-	sha1.update(array[0])
-	sha1.update(array[1])
-	sha1.update(array[2])
-	
-	
-	var hex = sha1.digest('hex')
-	console.log("Signature="+signature)
-	console.log("Calculated="+hex)
-	if(hex==signature){
-		res.send(req.query.echostr)
-	}else{
-		res.render('index', { currentTime: new Date() });
-	}
-	
-	
+	res.render('index', { currentTime: new Date() });	
   
 });
 
