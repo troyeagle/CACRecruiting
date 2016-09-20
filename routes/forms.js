@@ -40,16 +40,12 @@ router.post('/',function(req, res, next){
 
 	if(typeof(departmentList) == 'string'){
 		department = getDepartment(departmentList);
-		console.log('部门：'+ department);
 	}else {
 		var dstring = JSON.stringify(departmentList);
-		console.log(dstring);
 		var array = JSON.parse(dstring);
-		console.log(array);
 		for (var i = 0; i < array.length; i++) {
 			department+=(getDepartment(array[i])+";");
 		}
-		console.log(department);
 	}
 
 	var entry = new Entry();
@@ -60,12 +56,15 @@ router.post('/',function(req, res, next){
 	entry.set('cn',cn);
 	entry.set('department',department);
 
-	entry.save().then(function (todo) {
-    console.log('objectId is ' + entry.id);
+	entry.save().then(function (entry) {
+		res.render('forms');
   }, function (error) {
     // 失败之后执行其他逻辑
+		res.render('error');
   });
-	res.redirect('/forms');
+
+
+	// res.render('success');
 });
 
 
