@@ -14,7 +14,7 @@ router.post('/',function(req, res, next){
 
 	var realname = req.body.realName;
 	var phone = req.body.phone;
-	var academy = req.body.academy;
+	var academy = req.body.academies;
 	var gradeNum = req.body.grade;
 	var cn = req.body.cn;
 	var departmentList = req.body.department;
@@ -38,7 +38,9 @@ router.post('/',function(req, res, next){
 	}
 	//处理部门信息
 
-	if(typeof(departmentList) == 'string'){
+	if(typeof(departmentList)=='undefined'){
+		department = "未选择;";
+	}else if(typeof(departmentList) == 'string'){
 		department = getDepartment(departmentList);
 	}else {
 		var dstring = JSON.stringify(departmentList);
@@ -57,14 +59,12 @@ router.post('/',function(req, res, next){
 	entry.set('department',department);
 
 	entry.save().then(function (entry) {
-		res.render('forms');
+		res.render('success');
   }, function (error) {
     // 失败之后执行其他逻辑
-		res.render('error');
+		res.render('forms');
   });
 
-
-	// res.render('success');
 });
 
 
