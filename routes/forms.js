@@ -13,12 +13,14 @@ router.post('/',function(req, res, next){
 	console.log(req.body)
 
 	var realname = req.body.realName;
+	var studyId = req.body.studyId;
 	var phone = req.body.phone;
 	var academy = req.body.academies;
 	var gradeNum = req.body.grade;
 	var cn = req.body.cn;
 	var departmentList = req.body.department;
 	var department='';
+	var announce = req.body.announce;
 
 	//处理年级信息
   var grade = '';
@@ -52,11 +54,13 @@ router.post('/',function(req, res, next){
 
 	var entry = new Entry();
 	entry.set('realName',realname);
+	entry.set('studyId',studyId);
 	entry.set('phone',phone);
 	entry.set('academy',academy);
 	entry.set('grade',grade);
 	entry.set('cn',cn);
 	entry.set('department',department);
+	entry.set('announce',announce);
 
 	entry.save().then(function (entry) {
 		res.render('success');
