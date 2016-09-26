@@ -38,7 +38,8 @@
 								 <label for="realName">真实姓名<span style="color:red">*</span></label><input type="text" class="form-control" name="realName" id="realName" required />
 							</div>
               <div class="form-group">
-								 <label for="studyId">学号<span style="color:red">*</span></label><input type="text" class="form-control" name="studyId" id="studyId" required />
+								 <label for="studyId">学号（如非本校请填写9个0）<span style="color:red">*</span></label><input type="text" class="form-control" name="studyId" id="studyId"
+                 pattern="[a-zA-Z0-9]{9}" title="9位学号" required />
 							</div>
 							<div class="form-group">
 								 <label for="phone">手机<span style="color:red">*</span></label><input type="text" class="form-control" name="phone" id="phone"

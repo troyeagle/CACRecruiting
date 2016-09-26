@@ -22,6 +22,17 @@ router.post('/',function(req, res, next){
 	var department='';
 	var announce = req.body.announce;
 
+	var testNum = testReq(req)
+
+	if(testNum!=0){
+		var str = 'fail'
+		str += testNum.toString();
+		res.render(str);
+		return;
+	}
+
+
+
 	//处理年级信息
   var grade = '';
 
@@ -72,7 +83,7 @@ router.post('/',function(req, res, next){
 });
 
 
-//辅助函数
+//辅助函数 获得部门名称
 function getDepartment(num){
 	switch(num){
 		case '1':
@@ -92,6 +103,41 @@ function getDepartment(num){
 		default:
 			return '恭喜你发现隐藏部门！';
 	}
+}
+
+//辅助函数，检查输入的正确性
+//如果正确，返回0.如果错误，根据错误位置返回一个整数
+
+function testReq(req){
+	var studyId = req.body.studyId;
+	var phone = req.body.phone;
+	var academy = req.body.academies;
+	var departmentList = req.body.department;
+
+	var idReg1 = /[A-Za-z]{2}[0-9]{7}/
+	var idReg2 = /[0-9]{9}/
+	if(!(idReg1.test(studyId)||idReg2.test(studyId))){
+		console.log('Id Wrong');
+		return 1;
+	}
+	var phoneReg = /[0-9]{11}/;
+	if(!phoneReg.test(phone)){
+		console.log('phone Wrong')
+		return 2;
+	}
+
+	if(academy=='0'){
+		console.log('uninput academy');
+		return 3;
+	}
+
+	if(typeof(departmentList)=='undefined'){
+		console.log('unchoose department');
+		return 4;
+	}
+
+	return 0;
+
 }
 
 module.exports = router
