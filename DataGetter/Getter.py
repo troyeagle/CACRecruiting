@@ -41,6 +41,7 @@ for sheet in wss:
 
 CAC = leancloud.Object.extend('CACer')
 query = leancloud.Query(CAC)
+query.limit(1000)
 
 print(query.find())
 
