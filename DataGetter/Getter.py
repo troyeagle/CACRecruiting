@@ -16,23 +16,23 @@ leancloud.init("FtSzJNltnwUzgGgehg4aRPMK", "Nae1PlPR4veOa4KbBR2X65IH")
 
 wb = xlwt.Workbook()
 ws0 = wb.add_sheet('All',cell_overwrite_ok=True)
-ws1 = wb.add_sheet('cos',cell_overwrite_ok=True)
-ws2 = wb.add_sheet('ZhaiWu',cell_overwrite_ok=True)
-ws3 = wb.add_sheet('XuanChuan',cell_overwrite_ok=True)
+ws1 = wb.add_sheet('Cosplay',cell_overwrite_ok=True)
+ws2 = wb.add_sheet('Dance',cell_overwrite_ok=True)
+ws3 = wb.add_sheet('Artwork',cell_overwrite_ok=True)
 ws4 = wb.add_sheet('Music',cell_overwrite_ok=True)
 ws5 = wb.add_sheet('Technology',cell_overwrite_ok=True)
-ws6 = wb.add_sheet('HuoDong',cell_overwrite_ok=True)
-ws7 = wb.add_sheet('SheYing',cell_overwrite_ok=True)
+ws6 = wb.add_sheet('Activity',cell_overwrite_ok=True)
+ws7 = wb.add_sheet('Photography',cell_overwrite_ok=True)
 
 wss = [ws0,ws1,ws2,ws3,ws4,ws5,ws6,ws7]
 pointer = [0,0,0,0,0,0,0,0]
 
 for sheet in wss:
     sheet.write(0, 0, 'Name')
-    sheet.write(0, 1, 'StudyId')
+    sheet.write(0, 1, 'SerialNum')
     sheet.write(0, 2, 'Phone')
     sheet.write(0, 3, 'Academy')
-    sheet.write(0, 4, 'Year')
+    sheet.write(0, 4, 'Grade')
     sheet.write(0, 5, 'CN')
     sheet.write(0, 6, 'Departments')
     sheet.write(0, 7, 'Announcement')

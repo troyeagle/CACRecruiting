@@ -38,13 +38,19 @@ router.post('/',function(req, res, next){
 
   switch(gradeNum){
 		case 'option1':
-			grade = '2016';
+			grade = '2017';
 			break;
 		case 'option2':
-			grade = '2015';
+			grade = '2016';
 			break;
 		case 'option3':
-			grade = '2014或者更早';
+			grade = '2015';
+			break;
+		case 'option4':
+			grade = '2014';
+			break;
+		case 'option5':
+			grade = '研究生及以上';
 			break;
 		default:
 			grade = '?';
